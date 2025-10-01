@@ -9,3 +9,4 @@ public record DadosSerie(
 		@JsonAlias("totalSeasons") Integer totalTemporadas,
 		@JsonAlias("imdbRating") String avaliacao) {
 }
+ 

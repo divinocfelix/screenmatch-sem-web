@@ -20,7 +20,7 @@ public class ConsumoAPI {
 		} catch(IOException e) {
 			throw new RuntimeException(e);
 		} catch(InterruptedException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException(e); 
 		}
 		
 		String json = response.body();
