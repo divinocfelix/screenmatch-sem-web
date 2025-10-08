@@ -4,11 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.alura.screenmatch.model.DadosEpisodio;
-import br.com.alura.screenmatch.model.DadosSerie;
-import br.com.alura.screenmatch.service.ConsumoAPI;
-import br.com.alura.screenmatch.service.ConverteDados;
-
 @SpringBootApplication
 public class ScreenmatchApplication implements CommandLineRunner {
 
@@ -18,16 +13,14 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		var consumoAPI = new ConsumoAPI();
-		var json = consumoAPI.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apiKey=683bb0b4");
-		//System.out.println(json);
-		
-		ConverteDados conversor = new ConverteDados();
-		DadosSerie dadosSerie = conversor.obterDados(json, DadosSerie.class);
-		//System.out.println(dadosSerie);
-		
-		json = consumoAPI.obterDados("https://www.omdbapi.com/?t=gilmore+girls&season=1&Episode=2&apiKey=683bb0b4");
-		DadosEpisodio dadosEpisodio = conversor.obterDados(json, DadosEpisodio.class);
-		System.out.println(dadosEpisodio);
+		var principal = new Principal();
+		principal.exibirMenu();
 	}
 }
+
+/*
+https://portal.app.foursys.com/
+	
+1 - Treinamento obrigatorio assim que receber a maquina do cliente.
+2 - lançar o ponto na foursys e no otl (sistema do cliente)
+*/
